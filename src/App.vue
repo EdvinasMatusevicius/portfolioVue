@@ -1,32 +1,48 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav-bar></nav-bar>
+    <nav-tabs></nav-tabs>
+    <router-view class="content"></router-view>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import navBar from '@/partials/NavBar.vue';
+import navTabs from '@/partials/NavTabs.vue';
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name:'app',
+  components:{
+    navBar,
+    navTabs
   }
+
 }
+</script>
+
+<style lang="scss">
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  .content{
+    grid-area: content;
+    // overflow-y: scroll;
+  }
+  #app {
+    width:100vw;
+    height:100vh;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #ebebeb;
+    background: #242424;
+    display: grid;
+    grid-template-rows: 3rem auto;
+    grid-template-columns: 15rem auto;
+    grid-template-areas: 
+    "navbar navtabs"
+    "navbar content"
+    ;
+  }
 </style>
