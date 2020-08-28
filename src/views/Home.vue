@@ -1,6 +1,6 @@
 <template>
   <div class="homeGrid">
-
+    this is homepage
   </div>
 </template>
 

@@ -43,9 +43,6 @@ export default {
             font-size: 1.2rem;
         }
     }
-    .navBarBtn{
-        margin-bottom: 0.4rem;
-    }
     .navBarBtn:hover{
         background: #ffffff0d;
     }

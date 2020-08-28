@@ -46,7 +46,7 @@ export default new Vuex.Store({
       tabs[tabIndex].status='selected';
     },
     closeTab({tabs},payload){
-      if(payload.selectedIndex){
+      if(payload.selectedIndex !== undefined){
         tabs.forEach((tab)=>tab.status = 'deselected');
         tabs[payload.selectedIndex].status = 'selected';
       }
