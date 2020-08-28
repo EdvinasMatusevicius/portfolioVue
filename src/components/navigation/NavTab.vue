@@ -1,27 +1,42 @@
 <template>
   <div :class="'tab '+ tab.status">
       <nav-route :routeInfo="tab"></nav-route>
+      <close-icon class="tab__close" @click="closeTab({id:tab.id})" />
   </div>
 </template>
 
 <script>
 import navRoute from '@/components/navigation/NavRouteBtn.vue'
+import CloseIcon from 'vue-material-design-icons/Close.vue';
+import { mapActions } from 'vuex';
 
 export default {
     name:'navTab',
     props:['tab'],
     components:{
-        navRoute
+        navRoute,
+        CloseIcon
+    },
+    methods:{
+        ...mapActions({
+            closeTab:'closeTab'
+        })
     }
 }
 </script>
 
-<style>
+<style lang="scss">
     .tab{
-        display:inline-block;
+        display:inline-flex;
         height:100%;
-        line-height: 3rem;
+        align-items: center;
         margin-right: 1px;
+
+        &__close{
+            cursor: pointer;
+            padding-right: 0.5rem;
+
+        }
     }
     .selected{
         background: #242424;

@@ -4,7 +4,9 @@
             <span class="introduction__name">Edvinas Matusevičius</span>
             <span class="introduction__spec">Full stack programing</span>
         </div>
-        <nav-route v-for="route of routeArr" :key="route.id" :routeInfo="route"></nav-route>
+        <div class="navBarBtn" v-for="route of routeArr" :key="route.id">
+            <nav-route :routeInfo="route"></nav-route>
+        </div>
 
     </div>
 </template>
@@ -40,5 +42,11 @@ export default {
         &__spec{
             font-size: 1.2rem;
         }
+    }
+    .navBarBtn{
+        margin-bottom: 0.4rem;
+    }
+    .navBarBtn:hover{
+        background: #ffffff0d;
     }
 </style>

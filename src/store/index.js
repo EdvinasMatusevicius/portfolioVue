@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '@/router/index.js'
 
 Vue.use(Vuex)
 
@@ -44,7 +45,11 @@ export default new Vuex.Store({
       tabs.forEach((tab)=>tab.status = 'deselected');
       tabs[tabIndex].status='selected';
     },
-    coloseTab({tabs},payload){
+    closeTab({tabs},payload){
+      if(payload.selectedIndex){
+        tabs.forEach((tab)=>tab.status = 'deselected');
+        tabs[payload.selectedIndex].status = 'selected';
+      }
       const tabIndex = tabs.findIndex(tab=> tab.id ===payload.id);
       tabs.splice(tabIndex,1);
     }
@@ -53,7 +58,15 @@ export default new Vuex.Store({
     openTab({commit},payload){
       commit('openTab',payload)
     },
-    closeTab({commit},payload){
+    closeTab({commit,state},payload){
+      const tabs = state.tabs;
+      const closeTabIndex = tabs.findIndex(tab=> tab.id ===payload.id);
+      if(tabs.length >1 && tabs[closeTabIndex].status === 'selected' && closeTabIndex !== -1){
+        const nextTabIndex = tabs[closeTabIndex+1] ? closeTabIndex+1 : closeTabIndex-1
+        router.push(tabs[nextTabIndex].route);
+        commit('closeTab',{...payload,selectedIndex:nextTabIndex});
+        return
+      }
       commit('closeTab',payload);
     }
   },
