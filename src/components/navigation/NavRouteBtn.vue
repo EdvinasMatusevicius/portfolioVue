@@ -28,10 +28,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .routeLink{
         text-decoration: none;
         font-weight: 100;
+        display: flex;
+        align-items: center;
     }
     .routeBtn{
         padding: 0 1rem;

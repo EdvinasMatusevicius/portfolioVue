@@ -2,7 +2,7 @@
     <div class="navBar">
         <div class="introduction">
             <span class="introduction__name">Edvinas Matusevičius</span>
-            <span class="introduction__spec">Full stack programing</span>
+            <span class="introduction__spec">Full-stack development</span>
         </div>
         <div class="navBarBtn" v-for="route of routeArr" :key="route.id">
             <nav-route :routeInfo="route"></nav-route>

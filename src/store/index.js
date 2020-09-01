@@ -23,7 +23,14 @@ export default new Vuex.Store({
         route:'/about',
       },
     ],
-    tabs:[],
+    tabs:[
+      {
+        id:1,
+        name:"Home",
+        route:"/",
+        status:"selected"
+      }
+    ],
   },
   getters:{
     getNavRoutes(state){
