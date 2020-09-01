@@ -17,12 +17,28 @@
 
 import icons from '@/partials/Icons.vue'
 import introduction from '@/components/home/IntroductionAnimation.vue'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name:'home',
   components:{
     icons,
     introduction
+  },
+  computed:{
+    ...mapGetters({
+      homeVisited:'homeVisited'
+    })
+  },
+  methods:{
+    ...mapActions({
+      setHomeVisited:'homeVisited'
+    })
+  },
+  beforeDestroy(){
+    if(!this.homeVisited){
+      this.setHomeVisited()
+    }
   }
 }
 </script>

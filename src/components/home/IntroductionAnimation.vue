@@ -1,12 +1,13 @@
 <template>
     <div class="wrapper">
         <div class="letters">
-            <span class="letter" v-for="(letterArr,i) in randomText" :key="i"><p>{{letterArr}}</p></span>
+            <span class="container" v-for="(letterArr,i) in randomText" :key="i"><p :class="setClass()">{{letterArr}}</p></span>
         </div>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
     name:'intro-animation',
     data(){
@@ -19,6 +20,11 @@ export default {
     },
     created(){
         this.randomText = this.fillRandonTxt();
+    },
+    computed:{
+        ...mapGetters({
+            homeVisited:'homeVisited'
+        })
     },
     methods:{
         fillRandonTxt(){
@@ -36,20 +42,37 @@ export default {
             }
             return textContainer;
         },
+        setClass(){
+            if(!this.homeVisited){
+                return this.selectRandomCLass()
+            }else{
+                return 'container__letter'
+            }
+        },
+        selectRandomCLass(){
+            const animationClassList = ['container__letter-anim1','container__letter-anim2','container__letter-anim3','container__letter-anim4'];
+            const randomIndex = Math.floor(Math.random() * animationClassList.length);
+            return animationClassList[randomIndex];
+        }
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
+    $animation1: 1s;
+    $animation2: 0.7s;
+    $animation3: 0.4s;
+    $animation4: 1.3s;
+    $transform: -600%;
     @keyframes slideUp {
       0% {
         transform: translateX(0%);
       }
       100% {
-        transform: translateY(-600%);
+        transform: translateY(#{$transform});
       }
     }
-    .letter{
+    .container{
         
         height: 1.5rem;
         overflow-y: hidden;
@@ -57,11 +80,25 @@ export default {
         font-size: 1.5rem;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        & p{
-            animation: 1s ease-out 0s  slideUp;
-            transform: translateY(-600%);
-            line-height: 1rem;
-            // add loded var in vuex  and add animation class with mounted()
+        line-height: 1rem;
+        &__letter{
+                transform: translateY(#{$transform});
+            &-anim1{
+                animation: #{$animation1} ease-out 0s  slideUp;
+                transform: translateY(#{$transform});
+            }
+            &-anim2{
+                animation: #{$animation2} ease-out 0s  slideUp;
+                transform: translateY(#{$transform});
+            } 
+            &-anim3{
+                animation: #{$animation3} ease-out 0s  slideUp;
+                transform: translateY(#{$transform});
+            }         
+            &-anim4{
+                animation: #{$animation4} ease-out 0s  slideUp;
+                transform: translateY(#{$transform});
+            }
         }
     }
 </style>

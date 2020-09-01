@@ -31,6 +31,7 @@ export default new Vuex.Store({
         status:"selected"
       }
     ],
+    homeVisited:false
   },
   getters:{
     getNavRoutes(state){
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     },
     getTabs(state){
       return state.tabs
+    },
+    homeVisited(state){
+      return state.homeVisited
     }
   },
   mutations: {
@@ -59,9 +63,15 @@ export default new Vuex.Store({
       }
       const tabIndex = tabs.findIndex(tab=> tab.id ===payload.id);
       tabs.splice(tabIndex,1);
+    },
+    homeVisited(state){
+      state.homeVisited = true;
     }
   },
   actions: {
+    homeVisited({commit}){
+      commit('homeVisited')
+    },
     openTab({commit},payload){
       commit('openTab',payload)
     },
