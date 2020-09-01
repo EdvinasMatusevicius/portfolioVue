@@ -24,12 +24,12 @@ export default new Vuex.Store({
       },
     ],
     tabs:[
-      {
-        id:1,
-        name:"Home",
-        route:"/",
-        status:"selected"
-      }
+      // {
+      //   id:1,
+      //   name:"Home",
+      //   route:"/",
+      //   status:"selected"
+      // }
     ],
     homeVisited:false
   },
@@ -46,6 +46,7 @@ export default new Vuex.Store({
   },
   mutations: {
     openTab({tabs,navigationRoutes},payload){
+      payload = (navigationRoutes.filter(route=>payload === route.name))[0];
       const tabIndex = tabs.findIndex(tab=> tab.id ===payload.id);
       if(tabIndex === -1){
         const routeInfo = navigationRoutes.filter((navRoute)=>navRoute.id === payload.id);

@@ -1,5 +1,5 @@
 <template>
-    <router-link class="routeLink" :to="routeInfo.route"><div class="routeBtn" @click="newTab({id:routeInfo.id})">
+    <router-link class="routeLink" :to="routeInfo.route"><div class="routeBtn">
         <folder-multiple-outline-icon class="icon orange" v-if="routeInfo.name ==='My projects'"></folder-multiple-outline-icon>
         <home-icon class="icon green" v-if="routeInfo.name ==='Home'"></home-icon>
         <information-variant-icon class="icon yellow" v-if="routeInfo.name ==='About'"></information-variant-icon>
