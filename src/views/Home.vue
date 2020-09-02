@@ -69,7 +69,7 @@ export default {
   }
   .homeGrid{
     display:grid;
-    grid-template-rows:3rem 5rem 5rem auto;
+    grid-template-rows:3rem 20rem 4rem auto;
     grid-template-columns:auto 40% auto 40% auto;
     grid-template-areas: 
     ". . . . ."
