@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import navBar from '@/partials/NavBar.vue';
-import navTabs from '@/partials/NavTabs.vue';
+import navBar from '@/components/navigation/NavBar.vue';
+import navTabs from '@/components/navigation/NavTabs.vue';
 
 export default {
   name:'app',
@@ -27,11 +27,12 @@ export default {
   }
   .content{
     grid-area: content;
-    // overflow-y: scroll;
+    overflow-y: scroll;
   }
   #app {
     width:100vw;
     height:100vh;
+    position: fixed;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

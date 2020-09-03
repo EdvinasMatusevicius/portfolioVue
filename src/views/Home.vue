@@ -4,7 +4,7 @@
     <introduction class="intro"></introduction>
     <div class="title">Newest projects</div>
     <div class="project1">
-      <img src="@/assets/placeholder1.png" alt="">
+      <project-card :card="card"></project-card>
     </div>
     <div class="project2">
       <img src="@/assets/placeholder5.png" alt="">
@@ -17,14 +17,39 @@
 
 import icons from '@/partials/Icons.vue'
 import introduction from '@/components/home/IntroductionAnimation.vue'
+import projectCard from '@/components/project/card.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name:'home',
   components:{
     icons,
-    introduction
+    introduction,
+    projectCard
   },
+  //----------test data
+   data(){
+        return{
+          card:{
+            icons:['vue','laravel','mysql','linux','nginx'],
+            buttons:[
+              {
+                name:'To website',
+                icon:'open',
+                color:'blue',
+                route:'#'
+              },
+              {
+                name:'To github',
+                icon:'github',
+                color:'green',
+                route:'#'
+              },
+            ]
+          }
+        }
+    },
+  //------------------
   computed:{
     ...mapGetters({
       homeVisited:'homeVisited'
@@ -54,11 +79,7 @@ export default {
     font-size: 1.3rem;
   }
   .project1{
-    grid-area: project1;;
-    & img{
-      object-fit: cover;
-      width: 100%
-    }
+    grid-area: project1;
   }
   .project2{
     grid-area: project2;
@@ -69,7 +90,7 @@ export default {
   }
   .homeGrid{
     display:grid;
-    grid-template-rows:3rem 20rem 4rem auto;
+    grid-template-rows:3rem 6rem 4rem auto;
     grid-template-columns:auto 40% auto 40% auto;
     grid-template-areas: 
     ". . . . ."

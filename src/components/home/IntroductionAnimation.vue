@@ -52,7 +52,6 @@ export default {
                 }
                 if(this.finalText[i] === ' '){ wordIndex += 1;}
             }
-            console.log(textContainer);
             return textContainer;
         },
         setClass(){

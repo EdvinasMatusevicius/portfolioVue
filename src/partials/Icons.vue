@@ -10,12 +10,14 @@
         <php-icon v-if="icon === 'php'" class="php"></php-icon>
         <laravel-icon v-if="icon === 'laravel'" class="laravel"></laravel-icon>
         <git-icon v-if="icon === 'git'" class="git"></git-icon>
+        <github-icon v-if="icon === 'github'"></github-icon>
         <img v-if="icon === 'ps'" class="icon1" src="@/assets/photoshop.svg" alt="">
         <img v-if="icon === 'illustrator'" class="icon1" src="@/assets/illustrator.svg" alt="">
         <img v-if="icon === 'mysql'" class="icon2" src="@/assets/mysql.svg" alt="">
         <img v-if="icon === 'mongodb'" class="icon1" src="@/assets/mongodb.svg" alt="">
         <img v-if="icon === 'linux'" class="icon1" src="@/assets/linux.svg" alt="">
         <img v-if="icon === 'nginx'" class="icon1" src="@/assets/nginx.svg" alt="">
+        <open-icon v-if="icon === 'open'"></open-icon>
     </div>
 </template>
 
@@ -29,6 +31,9 @@ import VueIcon from 'vue-material-design-icons/Vuejs.vue';
 import PhpIcon from 'vue-material-design-icons/LanguagePhp.vue';
 import LaravelIcon from 'vue-material-design-icons/Laravel.vue';
 import GitIcon from 'vue-material-design-icons/Git.vue';
+import GithubIcon from 'vue-material-design-icons/Github.vue';
+import OpenIcon from 'vue-material-design-icons/OpenInApp.vue';
+
 // import Icon from 'vue-material-design-icons/.vue';
 // import Icon from 'vue-material-design-icons/.vue';
 
@@ -45,6 +50,8 @@ export default {
         PhpIcon,
         LaravelIcon,
         GitIcon,
+        GithubIcon,
+        OpenIcon,
     }
 }
 </script>
@@ -60,7 +67,7 @@ export default {
     }
     .icon2{
         width: 3rem;
-        height: 1.5rem;
+        height: 1.7rem;
     }
     .css{
         color: #276bbf;
