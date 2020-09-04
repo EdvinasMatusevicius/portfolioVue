@@ -29,6 +29,8 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content:space-around;
+        // padding-top: 0.3rem;
+        // background: rgba(255, 255, 255, 0.05);
     }
     img{
         width: 100%;
@@ -36,5 +38,6 @@ export default {
     .links{
         width: 100%;
         display: inline-flex;
+        flex-wrap: wrap;
     }
 </style>

@@ -1,8 +1,10 @@
 <template>
-    <div :class="'btn '+button.color">
-        <icon :icon="button.icon"></icon>
-        <div>{{button.name}}</div>
-    </div>
+    <!-- <div :class="'btn '+button.color"> -->
+        <a :href="button.route" :class="'btn '+button.classes">
+            <icon :icon="button.icon"></icon>
+            <div>{{button.name}}</div>
+        </a>
+    <!-- </div> -->
 </template>
 
 <script>
@@ -21,16 +23,29 @@ export default {
         padding: 0.2rem 0;
         display: flex;
         flex-direction: row;
-        min-width: 50%;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
+        text-decoration: none;
+        color: white;
+    }
+    .width100{
+        min-width: 100%;
+    }
+    .width50{
+        min-width: 50%;
     }
     .green{
         background: rgb(2, 154, 88);
     }
+    .orange{
+        background: rgb(251, 152, 2);
+    }
     .blue{
         background: rgba(0, 142, 202, 0.932);
-        
+    }
+    @media (max-width: 1100px) {
+        .width50{
+            min-width: 100%;
+        }
     }
 </style>

@@ -36,14 +36,20 @@ export default {
               {
                 name:'To website',
                 icon:'open',
-                color:'blue',
+                classes:'blue width100',
                 route:'#'
               },
               {
-                name:'To github',
+                name:'To github front-end',
                 icon:'github',
-                color:'green',
-                route:'#'
+                classes:'green width50',
+                route:'https://github.com/EdvinasMatusevicius/serverpiVUE'
+              },
+                         {
+                name:'To github back-end',
+                icon:'github',
+                classes:'orange width50',
+                route:'https://github.com/EdvinasMatusevicius/serverpi'
               },
             ]
           }
