@@ -1,6 +1,6 @@
 <template>
     <!-- <div :class="'btn '+button.color"> -->
-        <a :href="button.route" :class="'btn '+button.classes">
+        <a :href="button.route" :class="'btn '+button.classes" target="_blank" rel="noopener noreferrer">
             <icon :icon="button.icon"></icon>
             <div>{{button.name}}</div>
         </a>

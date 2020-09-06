@@ -23,16 +23,59 @@ export default new Vuex.Store({
         route:'/about',
       },
     ],
-    tabs:[
-      // {
-      //   id:1,
-      //   name:"Home",
-      //   route:"/",
-      //   status:"selected"
-      // }
-    ],
-    homeVisited:false
-  },
+    tabs:[],
+    homeVisited:false,
+    projects:[
+      {
+        frontPage:true,
+        name:'ServerPi',
+        icons:['vue','laravel','mysql','linux','nginx'],
+        buttons:[
+          {
+            name:'To website',
+            icon:'open',
+            classes:'blue width100',
+            route:'#'
+          },
+          {
+            name:'To github front-end',
+            icon:'github',
+            classes:'green width50',
+            route:'https://github.com/EdvinasMatusevicius/serverpiVUE'
+          },
+          {
+            name:'To github back-end',
+            icon:'github',
+            classes:'orange width50',
+            route:'https://github.com/EdvinasMatusevicius/serverpi'
+          },
+        ],
+        description:'Website to quickly deploy pure PHP7.3, Laravel, Vue.js or static websites on raspberry PI runing Debian-based operating system'
+      },
+      {
+        frontPage:true,
+        name:'Darbo baze',
+        icons:['node','mongodb'],
+        buttons:[
+          {
+            name:'To website',
+            icon:'open',
+            classes:'blue width100',
+            route:'#'
+          },
+          {
+            name:'To github',
+            icon:'github',
+            classes:'green width100',
+            route:'https://github.com/EdvinasMatusevicius/darbo-baze'
+          }
+        ],
+        description:'Job search website that scrapes job posting websites for jobs fitting set criteria'
+      }
+    ]
+
+    },
+
   getters:{
     getNavRoutes(state){
       return state.navigationRoutes
@@ -42,6 +85,9 @@ export default new Vuex.Store({
     },
     homeVisited(state){
       return state.homeVisited
+    },
+    getFrontPageProjects(state){
+      return state.projects.filter((project)=>project.frontPage)
     }
   },
   mutations: {

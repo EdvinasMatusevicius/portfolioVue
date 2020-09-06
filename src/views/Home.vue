@@ -4,10 +4,10 @@
     <introduction class="intro"></introduction>
     <div class="title">Newest projects</div>
     <div class="project1">
-      <project-card :card="card"></project-card>
+      <project-card :card="projects[0]"></project-card>
     </div>
     <div class="project2">
-      <img src="@/assets/placeholder5.png" alt="">
+            <project-card :card="projects[1]"></project-card>
     </div>
     
   </div>
@@ -27,38 +27,10 @@ export default {
     introduction,
     projectCard
   },
-  //----------test data
-   data(){
-        return{
-          card:{
-            icons:['vue','laravel','mysql','linux','nginx'],
-            buttons:[
-              {
-                name:'To website',
-                icon:'open',
-                classes:'blue width100',
-                route:'#'
-              },
-              {
-                name:'To github front-end',
-                icon:'github',
-                classes:'green width50',
-                route:'https://github.com/EdvinasMatusevicius/serverpiVUE'
-              },
-                         {
-                name:'To github back-end',
-                icon:'github',
-                classes:'orange width50',
-                route:'https://github.com/EdvinasMatusevicius/serverpi'
-              },
-            ]
-          }
-        }
-    },
-  //------------------
   computed:{
     ...mapGetters({
-      homeVisited:'homeVisited'
+      homeVisited:'homeVisited',
+      projects:'getFrontPageProjects'
     })
   },
   methods:{
@@ -83,6 +55,7 @@ export default {
     grid-area: title;
     margin:0 auto;
     font-size: 1.3rem;
+    letter-spacing: 0.4rem;
   }
   .project1{
     grid-area: project1;
