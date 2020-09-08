@@ -18,6 +18,8 @@
         <img v-if="icon === 'linux'" class="icon1" src="@/assets/linux.svg" alt="">
         <img v-if="icon === 'nginx'" class="icon1" src="@/assets/nginx.svg" alt="">
         <open-icon v-if="icon === 'open'"></open-icon>
+        <email v-if="icon === 'email'"></email>
+        <phone v-if="icon === 'phone'"></phone>
     </div>
 </template>
 
@@ -33,9 +35,9 @@ import LaravelIcon from 'vue-material-design-icons/Laravel.vue';
 import GitIcon from 'vue-material-design-icons/Git.vue';
 import GithubIcon from 'vue-material-design-icons/Github.vue';
 import OpenIcon from 'vue-material-design-icons/OpenInApp.vue';
+import Email from 'vue-material-design-icons/Email.vue';
+import Phone from 'vue-material-design-icons/Cellphone.vue';
 
-// import Icon from 'vue-material-design-icons/.vue';
-// import Icon from 'vue-material-design-icons/.vue';
 
 export default {
     name:'icons',
@@ -52,6 +54,8 @@ export default {
         GitIcon,
         GithubIcon,
         OpenIcon,
+        Email,
+        Phone,
     }
 }
 </script>

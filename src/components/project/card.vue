@@ -23,7 +23,7 @@ export default {
 <style lang='scss' scoped>
     .card{
         object-fit: cover;
-        width: 100%
+        width: 100%;
     }
     .technologies{
         display: flex;
@@ -48,6 +48,7 @@ export default {
         align-items: center;
         text-align: center;
         background:#ffffff0d;
+        padding-bottom: 1rem;
         margin-bottom: 1rem;
         &__name{
             margin:1rem 0;

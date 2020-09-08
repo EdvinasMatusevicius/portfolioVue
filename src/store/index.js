@@ -29,7 +29,7 @@ export default new Vuex.Store({
       {
         frontPage:true,
         name:'ServerPi',
-        icons:['vue','laravel','mysql','linux','nginx'],
+        icons:['html','sass','js','vue','laravel','mysql','linux','nginx'],
         buttons:[
           {
             name:'To website',
@@ -50,12 +50,12 @@ export default new Vuex.Store({
             route:'https://github.com/EdvinasMatusevicius/serverpi'
           },
         ],
-        description:'Website to quickly deploy pure PHP7.3, Laravel, Vue.js or static websites on raspberry PI runing Debian-based operating system'
+        description:'Website to quickly deploy pure PHP7.3, Laravel, Vue.js or static websites from your github repository on raspberry PI runing Debian-based operating system'
       },
       {
         frontPage:true,
         name:'Darbo baze',
-        icons:['node','mongodb'],
+        icons:['html','sass','js','node','mongodb'],
         buttons:[
           {
             name:'To website',
@@ -71,7 +71,47 @@ export default new Vuex.Store({
           }
         ],
         description:'Job search website that scrapes job posting websites for jobs fitting set criteria'
-      }
+      },
+      {
+        frontPage:true,
+        name:'Basic chat',
+        icons:['html','css','js','node','mongodb'],
+        buttons:[
+          {
+            name:'To website',
+            icon:'open',
+            classes:'blue width100',
+            route:'#'
+          },
+          {
+            name:'To github',
+            icon:'github',
+            classes:'green width100',
+            route:'https://github.com/EdvinasMatusevicius/darbo-baze'
+          }
+        ],
+        description:'Basic chat room where registered users and guests can communicate.'
+      },
+      {
+        frontPage:true,
+        name:'Basic rpg',
+        icons:['html','css','js','php','mysql'],
+        buttons:[
+          {
+            name:'To website',
+            icon:'open',
+            classes:'blue width100',
+            route:'#'
+          },
+          {
+            name:'To github',
+            icon:'github',
+            classes:'green width100',
+            route:'https://github.com/EdvinasMatusevicius/darbo-baze'
+          }
+        ],
+        description:'A game with pixel graphics that have most of rpg game components such as classes with diferent stats,leveling up, turn based combat,items with ability to save your character progress'
+      },
     ]
 
     },
@@ -86,6 +126,10 @@ export default new Vuex.Store({
     homeVisited(state){
       return state.homeVisited
     },
+    getProjects(state){
+      return state.projects;
+    }
+    ,
     getFrontPageProjects(state){
       return state.projects.filter((project)=>project.frontPage)
     }
