@@ -1,7 +1,7 @@
 <template>
   <div class="card">
       <div class="technologies"><icon v-for="(icon,i) in card.icons" :key="i" :icon="icon"></icon> </div>
-      <img src="@/assets/placeholder5.png" alt="">
+      <img v-if="card.image" :src="card.image" alt="">
       <div class="links"><card-button  v-for="(button,i) in card.buttons" :key="i" :button="button"></card-button></div>
       <div class="descriprion"><div class="descriprion__name">{{card.name}}</div><div>{{card.description}}</div></div>
   </div>

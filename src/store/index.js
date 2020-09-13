@@ -30,12 +30,13 @@ export default new Vuex.Store({
         frontPage:true,
         name:'ServerPi',
         icons:['html','sass','js','vue','laravel','mysql','linux','nginx'],
+        image:require('@/assets/serverpi.png'),
         buttons:[
           {
             name:'To website',
             icon:'open',
             classes:'blue width100',
-            route:'#'
+            route:'http://www.serverpi.ddns.me/'
           },
           {
             name:'To github front-end',
@@ -50,18 +51,19 @@ export default new Vuex.Store({
             route:'https://github.com/EdvinasMatusevicius/serverpi'
           },
         ],
-        description:'Website to quickly deploy pure PHP7.3, Laravel, Vue.js or static websites from your github repository on raspberry PI runing Debian-based operating system'
+        description:'Website to quickly deploy pure PHP7.3, Laravel, Vue.js or static websites from your github repository on raspberry PI runing Debian GNU/Linux. (In development)'
       },
       {
         frontPage:true,
         name:'Darbo baze',
         icons:['html','sass','js','node','mongodb'],
+        image:require('@/assets/darboBaze.png'),
         buttons:[
           {
             name:'To website',
             icon:'open',
             classes:'blue width100',
-            route:'#'
+            route:'http://darbo-baze.ddns.me/'
           },
           {
             name:'To github',
@@ -76,18 +78,19 @@ export default new Vuex.Store({
         frontPage:true,
         name:'Basic chat',
         icons:['html','css','js','node','mongodb'],
+        image:require('@/assets/basicChat.png'),
         buttons:[
           {
             name:'To website',
             icon:'open',
             classes:'blue width100',
-            route:'#'
+            route:'https://chat-basic.herokuapp.com/'
           },
           {
             name:'To github',
             icon:'github',
             classes:'green width100',
-            route:'https://github.com/EdvinasMatusevicius/darbo-baze'
+            route:'https://github.com/EdvinasMatusevicius/Basic-chat'
           }
         ],
         description:'Basic chat room where registered users and guests can communicate.'
@@ -96,18 +99,19 @@ export default new Vuex.Store({
         frontPage:true,
         name:'Basic rpg',
         icons:['html','css','js','php','mysql'],
+        image:require('@/assets/basicRPG.png'),
         buttons:[
           {
             name:'To website',
             icon:'open',
             classes:'blue width100',
-            route:'#'
+            route:'basicrpg.serverpi.ddns.me'
           },
           {
             name:'To github',
             icon:'github',
             classes:'green width100',
-            route:'https://github.com/EdvinasMatusevicius/darbo-baze'
+            route:'https://github.com/EdvinasMatusevicius/basicRPG'
           }
         ],
         description:'A game with pixel graphics that have most of rpg game components such as classes with diferent stats,leveling up, turn based combat,items with ability to save your character progress'
@@ -154,6 +158,9 @@ export default new Vuex.Store({
       }
       const tabIndex = tabs.findIndex(tab=> tab.id ===payload.id);
       tabs.splice(tabIndex,1);
+      if(tabs.length === 0){
+        router.push('/notab')
+      }
     },
     homeVisited(state){
       state.homeVisited = true;

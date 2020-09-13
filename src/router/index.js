@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 
   const routes = [
   {
+    id:1,
     path: '/',
     name: 'Home',
     component: Home,
@@ -27,15 +28,19 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     beforeEnter:openTab
-
   },
   {
-    id:1,
+    id:3,
     path:'/projects',
     name:'My projects',
     component: ()=>import('../views/Projects.vue'),
     beforeEnter:openTab
-
+  },
+  {
+  id:4,
+  path:'/notab',
+  name:'No tab',
+  component: ()=>import('../views/NoTab.vue')
   }
 ]
 
