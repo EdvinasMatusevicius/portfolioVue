@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/styles/_variables.scss';
   .intro{
     grid-area: intro;
   }
@@ -81,4 +82,18 @@ export default {
   .icon{
     margin: 0 0.3rem;
   }
+    @media(max-width: 900px){
+      .homeGrid{
+        grid-template-rows:3rem 9rem 4rem auto 2rem auto;
+        grid-template-columns:auto 90% auto;
+        grid-template-areas: 
+        ". . ."
+        ". intro ."
+        "title title title"
+        ". project1 ."
+        ". . ."
+        ". project2 ."
+        ;
+      }
+    }
 </style>

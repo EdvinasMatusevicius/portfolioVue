@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import './assets/styles/_variables.scss';
   *{
     margin:0px;
     padding:0px;
@@ -45,5 +46,16 @@ export default {
     "navbar navtabs"
     "navbar content"
     ;
+  }
+
+  @media(max-width: $mobileScreen){
+    #app{
+    grid-template-rows: 12rem auto;
+    grid-template-columns:auto;
+    grid-template-areas: 
+    "navbar "
+    "content"
+    ;
+    }
   }
 </style>

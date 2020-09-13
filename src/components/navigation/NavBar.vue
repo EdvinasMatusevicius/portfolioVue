@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+      @import '../../assets/styles/_variables.scss';
+
     .navBar{
         grid-area: navbar;
         background: #ffffff0d;
@@ -45,5 +47,11 @@ export default {
     }
     .navBarBtn:hover{
         background: #ffffff0d;
+    }
+    @media(max-width: $mobileScreen){
+        .introduction__name,
+        .introduction__spec{
+            margin:0 auto;
+        }
     }
 </style>

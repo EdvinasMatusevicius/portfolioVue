@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
   .about{
     display: grid;
+    grid-template-rows:auto auto auto ;
     // grid-template-columns: repeat(auto-fill);
   }
 </style>

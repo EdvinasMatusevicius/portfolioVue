@@ -28,7 +28,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+    @import '../../assets/styles/_variables.scss';
     .routeLink{
         text-decoration: none;
         font-weight: 100;
@@ -53,5 +54,11 @@ export default {
     }
     .yellow{
         color: yellow;
+    }
+
+    @media(max-width: $mobileScreen){
+        .routeLink{
+            justify-content: center;
+        }
     }
 </style>

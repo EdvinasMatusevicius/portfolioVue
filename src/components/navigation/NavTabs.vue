@@ -21,9 +21,16 @@ computed:{
 }
 </script>
 
-<style>
+<style lang='scss'>
+  @import '../../assets/styles/_variables.scss';
+
     .navTabs{
         grid-area: navtabs;
         background: #ffffff0d;
+    }
+    @media(max-width: $mobileScreen){
+        .navTabs{
+            display:none;
+        }
     }
 </style>
