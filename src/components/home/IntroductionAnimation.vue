@@ -2,8 +2,10 @@
     <div class="wraper">
         <div class="word" v-for="(wordArr,index) in randomText" :key="index">
             <span class="container" v-for="(letterArr,i) in wordArr" :key="i">
-                <p :class="setClass()">{{letterArr}}
-                </p>
+                <!-- <p :class="setClass()">{{letterArr}}</p> -->
+                <div :class="'container__letter-arr '+ setClass()">
+                    <div class="text-align container__letter-individual" v-for="(letter,i) in letterArr" :key="i">{{letter}}</div>
+                </div>
             </span>
         </div>
     </div>
@@ -75,13 +77,9 @@ export default {
     $animation2: 0.8s;
     $animation3: 0.4s;
     $animation4: 1.8s;
-    $transform: -9rem;
-    $transformMoz: -9rem;
-    $transformChrom: -10rem;
+    $transform: -755%;
     @mixin transformBrowsers {
         transform: translateY(#{$transform});
-        -webkit-transform: translateY(#{$transformChrom});
-        -moz-transform: translateY(#{$transformMoz});
     }
     @keyframes slideUp {
       0% {
@@ -98,18 +96,22 @@ export default {
 
     }
     .container{
-        padding: 0 1px;
+        display: inline-flex;
         height: 1.5rem;
-        width: 1rem;
         overflow: hidden;
         font-size: 1.5rem;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        line-height: 1rem;
+        &__letter-arr{
+            display: flex;
+            flex-direction: column;
+            margin-right: 2px;
+            height: 1.5rem;
+        }
         &__letter{
-            width: 1rem;
             @include transformBrowsers;
-
+            &-individual{
+                height: 1.5rem;
+                margin-top: 5px;
+            }
             &-anim1{
                 animation: #{$animation1} ease-out 0s  slideUp;
                 @include transformBrowsers;
@@ -127,5 +129,8 @@ export default {
                 @include transformBrowsers;
             }
         }
+    }
+    .text-align{
+        text-align: center;
     }
 </style>

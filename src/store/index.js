@@ -55,7 +55,7 @@ export default new Vuex.Store({
       },
       {
         frontPage:true,
-        name:'Darbo baze',
+        name:'Darbo bazė',
         icons:['html','sass','js','node','mongodb'],
         image:require('@/assets/darboBaze.png'),
         buttons:[

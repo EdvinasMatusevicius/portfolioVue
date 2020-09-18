@@ -84,7 +84,7 @@ export default {
   }
     @media(max-width: 900px){
       .homeGrid{
-        grid-template-rows:3rem 9rem 4rem auto 2rem auto;
+        grid-template-rows:3rem 11rem 4rem auto 2rem auto;
         grid-template-columns:auto 90% auto;
         grid-template-areas: 
         ". . ."
@@ -96,4 +96,10 @@ export default {
         ;
       }
     }
+    @media(max-width: 400px){
+      .homeGrid{
+        grid-template-rows:3rem 15rem 4rem auto 2rem auto;
+      }
+    }
+
 </style>

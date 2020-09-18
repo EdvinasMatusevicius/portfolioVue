@@ -41,7 +41,13 @@ Vue.use(VueRouter)
   path:'/notab',
   name:'No tab',
   component: ()=>import('../views/NoTab.vue')
-  }
+  },
+  {
+    id:4,
+    path:'/*',
+    name:'404',
+    component: ()=>import('../views/404.vue')
+    }
 ]
 
 const router = new VueRouter({

@@ -51,6 +51,7 @@ export default {
 <style lang="scss" scoped>
     .skills{
     // font-size: 1.3rem;
+    padding: 1rem 0;
     font-weight: 100;
     display: flex;
     align-items: center;
@@ -63,6 +64,7 @@ export default {
       display:flex;
       flex-direction: row;
       justify-content: space-around;
+      flex-wrap: wrap;
     }
     &__column{
       &-row{
