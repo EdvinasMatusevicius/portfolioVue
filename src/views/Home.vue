@@ -82,7 +82,7 @@ export default {
   .icon{
     margin: 0 0.3rem;
   }
-    @media(max-width: 900px){
+    @media(max-width: $tabletScreen){
       .homeGrid{
         grid-template-rows:3rem 11rem 4rem auto 2rem auto;
         grid-template-columns:auto 90% auto;
@@ -96,9 +96,12 @@ export default {
         ;
       }
     }
-    @media(max-width: 400px){
+    @media(max-width: $mobileScreen){
       .homeGrid{
         grid-template-rows:3rem 15rem 4rem auto 2rem auto;
+      }
+      .homeGrid>:last-child{
+        padding-bottom: $lastChildPadding;
       }
     }
 

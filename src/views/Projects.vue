@@ -21,11 +21,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/styles/_variables.scss';
+
   .projects{
     padding: 1rem;
     display: grid;
     column-gap: 1rem;
     row-gap: 4rem;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+  @media(max-width: $mobileScreen){
+  
+    .projects>:last-child{
+      padding-bottom: $lastChildPadding;
+    }
   }
 </style>

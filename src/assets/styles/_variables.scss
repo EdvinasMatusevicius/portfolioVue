@@ -1,1 +1,6 @@
-$mobileScreen: 700px;
+//BREAKPOINTS
+$tabletScreen: 900px;
+$mobileScreen: 500px;
+
+//content pages last child padding for mobile so that adress bar wouldnt cover content
+$lastChildPadding: 4rem;

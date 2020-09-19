@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
     .intro{
         padding: 1rem 2rem;
         margin: 0 auto;

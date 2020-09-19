@@ -3,7 +3,6 @@
     <introduction></introduction>
     <skills></skills>
     <contact></contact>
-    <div class="mobile-footer"></div>
   </div>
 </template>
 <script>
@@ -24,18 +23,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/styles/_variables.scss';
+
   .about{
     overflow-y:scroll ;
     display: grid;
     grid-template-rows:auto auto auto;
   }
-  .mobile-footer{
-    display: none;
-  }
-  @media(max-width: 500px){
-  .mobile-footer{
-    display: block;
-    height: 2rem;
-  }
+  @media(max-width: $mobileScreen){
+         .about>:last-child{
+        padding-bottom: $lastChildPadding;
+      }
   }
 </style>

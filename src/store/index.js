@@ -105,7 +105,7 @@ export default new Vuex.Store({
             name:'To website',
             icon:'open',
             classes:'blue width100',
-            route:'basicrpg.serverpi.ddns.me'
+            route:'http://basicrpg.serverpi.ddns.me'
           },
           {
             name:'To github',
